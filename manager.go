@@ -79,7 +79,7 @@ func (mgr *ApiMgr) prepareRequest(method, route string, payload interface{}) (*h
 		return nil, errors.New("failed to prepare request")
 	}
 
-	req, err := http.NewRequest(method, fmt.Sprintf("%s/%s", mgr.resource, route), bytes.NewBuffer(jsonBytes))
+	req, err := http.NewRequest(method, fmt.Sprintf("%s%s", mgr.resource, route), bytes.NewBuffer(jsonBytes))
 	if err != nil {
 		return nil, fmt.Errorf("failed to prepare request %s", err)
 	}
