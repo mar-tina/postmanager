@@ -25,8 +25,8 @@ type Resource struct {
 }
 
 type ResourceCheckPayload struct {
-	CollectionName string `json:"collectionName"`
-	ResourceName   string `json:"resourceName"`
+	Collection string `json:"collection"`
+	Resource   string `json:"resource"`
 }
 
 type Info struct {
@@ -60,5 +60,26 @@ type Header struct {
 type Body struct {
 	Mode string `json:"mode"`
 	Raw  string `json:"raw"`
-	JSON string `json:"json"`
+}
+
+type Environment struct {
+	ID     string       `json:"id"`
+	Name   string       `json:"name"`
+	Values []*EnvValues `json:"values"`
+}
+
+type EnvValues struct {
+	Enabled bool   `json:"enabled"`
+	Key     string `json:"key,omitempty"`
+	Value   string `json:"value,omitempty"`
+}
+
+type FetchResoure struct {
+	ServiceID string `json:"service_id"`
+	Key       string `json:"key"`
+	Resource  string `json:"resource"`
+}
+
+type UpdateEnv struct {
+	Env Environment `json:"environment"`
 }
