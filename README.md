@@ -13,7 +13,7 @@ and collections on postman.
 This returns a new manager instance with the instantiated name of the collection or ID to make it easier 
 to index the Endpoints that this particular service will have access to when they call mgr.Use function later on.
 The instance keeps track of a lot of things. The resource in this instance in the endpoint that is running the resource-tool
-API that keeps track of all changes and interacts with postman.
+API that keeps track of all changes and interacts with postman. [resource-tool](https://github.com/mar-tina/resource-tool/blob/main/README.md)
 
 ### Step Two: 
 
